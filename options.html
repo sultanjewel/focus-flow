@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Focus Flow Options</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="options-body">
+  <div class="container">
+    <h1>Focus Flow Settings</h1>
+    <div id="site-list">
+  <label for="block-list-input">Blocked Sites:</label>
+  <div id="block-list-tags" class="tag-list"></div>
+  <input type="text" id="block-list-input" placeholder="Add domain and press Enter" />
+</div>
+    <div id="timer-config">
+      <label for="focus-minutes">Focus Minutes:</label>
+      <input type="number" id="focus-minutes" min="1" max="120" />
+      <label for="break-minutes">Break Minutes:</label>
+      <input type="number" id="break-minutes" min="1" max="60" />
+    </div>
+    <div id="task-config">
+      <label for="breakTime">Break time after completing a task (minutes):</label>
+      <input type="number" id="breakTime" min="1" value="10">
+    </div>
+    <button id="save-options">Save Options</button>
+  </div>
+  <!-- Buy me a coffee button in bottom right corner -->
+  <div class="coffee-corner">
+    <a href="https://www.buymeacoffee.com/born2win.bd" target="_blank">
+      <img src="./images/buy_me_a_coffee.png" alt="Buy Me A Coffee" />
+    </a>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>

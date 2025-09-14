@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Flow",
+  "description": "Helps users focus by blocking distracting sites and showing their daily to-do list.",
+  "version": "1.1.0",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon_default.png",
+      "48": "images/icon_default.png",
+      "128": "images/icon_default.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon_default.png",
+    "48": "images/icon_default.png",
+    "128": "images/icon_default.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["block.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

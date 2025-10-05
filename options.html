@@ -15,13 +15,20 @@
 </div>
     <div id="timer-config">
       <label for="focus-minutes">Focus Minutes:</label>
-      <input type="number" id="focus-minutes" min="1" max="120" />
+      <input type="number" id="focus-minutes" min="1" max="99" />
+      <div id="focus-error" class="validation-error"></div>
+      
       <label for="break-minutes">Break Minutes:</label>
-      <input type="number" id="break-minutes" min="1" max="60" />
+      <input type="number" id="break-minutes" min="1" max="99" />
+      <div id="break-error" class="validation-error"></div>
     </div>
     <div id="task-config">
       <label for="breakTime">Break time after completing a task (minutes):</label>
-      <input type="number" id="breakTime" min="1" value="10">
+      <input type="number" id="breakTime" min="1" max="99" value="10">
+      <div id="task-break-error" class="validation-error"></div>
+    </div>
+    <div class="validation-info">
+      Note: Focus time and break times cannot be more than 99 minutes. Break times cannot be longer than focus time.
     </div>
     <button id="save-options">Save Options</button>
   </div>

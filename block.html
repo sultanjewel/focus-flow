@@ -2,9 +2,60 @@
 <html>
 <head>
   <title>Focus Mode</title>
-  <style>body{display:flex;align-items:center;justify-content:center;height:100vh;background:#fff;}</style>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%);
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .focus-container {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 600px;
+      width: 80%;
+      text-align: center;
+    }
+    
+    h1 {
+      color: #f44336; /* Red color for focus mode */
+      margin-top: 0;
+    }
+    
+    #focus-task {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      margin: 20px 0;
+    }
+    
+    .timer {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #f44336;
+    }
+    
+    .advice {
+      font-style: italic;
+      color: #555;
+      margin: 20px 0;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-  <div id="focus-task"></div>
+  <div class="focus-container">
+    <h1>Focus Mode Active</h1>
+    <div id="focus-task"></div>
+    <div class="advice">This website is currently blocked during your focus period. Complete your task to take a break.</div>
+  </div>
 </body>
 </html>

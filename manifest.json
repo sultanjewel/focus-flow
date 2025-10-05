@@ -6,7 +6,7 @@
   "permissions": [
     "storage",
     "tabs",
-    "scripting"
+    "notifications"
   ],
   "host_permissions": [
     "<all_urls>"
@@ -40,7 +40,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["block.html"],
+      "resources": ["block.html", "sounds/ding.mp3"],
       "matches": ["<all_urls>"]
     }
   ]

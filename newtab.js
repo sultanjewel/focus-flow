@@ -387,15 +387,39 @@ function showEditForm(todoItem, todo) {
     renderTodos();
   };
 
-  // Cancel edit on blur (if focus leaves all inputs/buttons)
+  // Save edit on blur (if focus leaves all inputs/buttons)
   [textInput, dateInput, timeInput].forEach(input => {
     input.addEventListener('blur', function(e) {
       setTimeout(() => {
-        // If none of the edit fields or save button is focused, cancel
+        // If none of the edit fields or save button is focused, save changes
         if (![textInput, dateInput, timeInput, saveBtn].includes(document.activeElement)) {
+          // Get values
+          const newText = textInput.value.trim();
+          const newDate = dateInput.value;
+          const newTime = timeInput.value;
+          
+          // Basic validation
+          if (!newText || !newDate || !newTime) {
+            // If fields are invalid, don't save and just revert
+            renderTodos();
+            return;
+          }
+          
+          // Check if date is in the future
+          const newDeadline = new Date(newDate + 'T' + newTime);
+          if (newDeadline < new Date()) {
+            // If date is in the past, don't save and just revert
+            renderTodos();
+            return;
+          }
+          
+          // Update todo
+          todo.text = newText;
+          todo.deadline = newDate + 'T' + newTime;
+          saveTodos();
           renderTodos();
         }
-      }, 0);
+      }, 100); // Slightly longer timeout to ensure click events are processed
     });
   });
 
